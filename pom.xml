@@ -1,5 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
  	<modelVersion>4.0.0</modelVersion>
  
  	<groupId>cn.mldn</groupId>
@@ -14,6 +14,7 @@
  		<!-- 配置MyBatis相关开发依赖 包版本 -->
  		<mybatis.version>3.4.5</mybatis.version>
  		<mysql.version>5.1.5</mysql.version>
+ 		<mldnmybatis.version>0.0.1</mldnmybatis.version>
  		
  		<!-- 配置日志相关组件 -->
  		<log4j.version>1.2.17</log4j.version>
@@ -29,6 +30,11 @@
  	</properties>
  	<dependencyManagement>
  		<dependencies>
+ 			<dependency>
+ 				<groupId>cn.mldn</groupId>
+ 				<artifactId>mldnmybatis-util</artifactId>
+ 				<version>${mldnmybatis.version}</version>
+ 			</dependency>
  			<dependency>
  				<groupId>log4j</groupId>
  				<artifactId>log4j</artifactId>
@@ -121,5 +127,6 @@
  	</build>
  	<modules>
  		<module>mldnmybatis-base</module>
- 	</modules>
+    <module>mldnmybatis-util</module>
+  </modules>
  </project>

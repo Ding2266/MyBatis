@@ -7,20 +7,25 @@
     <artifactId>mldnmybatis</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>mldnmybatis-base</artifactId>
-  <name>mldnmybatis-base</name>
+  <artifactId>mldnmybatis-util</artifactId>
+  <name>mldnmybatis-util</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
   	<dependency>
-		<groupId>cn.mldn</groupId>
-		<artifactId>mldnmybatis-util</artifactId>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
 	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
