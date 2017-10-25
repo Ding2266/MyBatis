@@ -32,4 +32,14 @@
 	<select id="findMap" resultType="Map">
 		SELECT nid,title,pub_date as pubdate,note FROM news  ; <!-- pubdate为设置的别名，与vo类型一致才可自动转换输出 -->
 	</select>
+	<!-- 由于此时需要传递有四个参数，那么久必须通过Map传递 ，所出现的内容全部为Map中的Key-->
+	<select id="findSplit" resultType="News" parameterType="map">
+		SELECT nid,title,pub_date,note
+		FROM news WHERE ${column} LIKE #{keyWord}
+		LIMIT #{startPage},#{lineSize} ; 
+	</select>
+	<!-- 查询符合条件的数据个数 -->
+	<select id="getSplitCount" resultType="long" parameterType="map">
+		SELECT COUNT(*) FROM news WHERE ${column} LIKE #{keyWord} ; 
+	</select>
 </mapper>

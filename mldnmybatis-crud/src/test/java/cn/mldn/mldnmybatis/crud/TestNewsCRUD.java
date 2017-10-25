@@ -1,10 +1,10 @@
 package cn.mldn.mldnmybatis.crud;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Random;
 
 import org.junit.Test;
@@ -18,6 +18,25 @@ public class TestNewsCRUD {
 	private static int rand ;
 	static {
 		rand = random.nextInt(Integer.MAX_VALUE) ; 
+	}
+	@Test
+	public void testSplit() throws Exception{
+		Long currentPage = 1L ;  //传递进来处理的数据
+		Integer lineSize = 5 ; 	//传递进来处理的数据
+		String column = "title" ; 	//传递进来处理的数据
+		String keyWord = "标题"  ; 	//传递进来处理的数据
+		Map<String,Object> map = new HashMap<String,Object>() ; 
+		map.put("column", column) ; 
+		map.put("keyWord", "%"+keyWord+"%") ; 
+		map.put("startPage", (currentPage - 1) * lineSize) ;
+		map.put("lineSize", lineSize) ; 
+		List<News> list = MyBatisSessionFactory.getSession().selectList("cn.mldn.mapping.NewsNS.findSplit", map); 
+		Long count = MyBatisSessionFactory.getSession().selectOne("cn.mldn.mapping.NewsNS.getSplitCount",map) ;
+		Iterator<News> iter = list.iterator() ; 
+		while(iter.hasNext()) {
+				System.out.println(iter.next());
+			}
+		System.err.println(count);
 	}
 	@Test
 	public void testNewsMap() throws Exception{
