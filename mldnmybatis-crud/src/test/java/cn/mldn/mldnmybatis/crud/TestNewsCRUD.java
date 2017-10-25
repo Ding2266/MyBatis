@@ -1,6 +1,10 @@
 package cn.mldn.mldnmybatis.crud;
 
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Random;
 
 import org.junit.Test;
@@ -14,6 +18,31 @@ public class TestNewsCRUD {
 	private static int rand ;
 	static {
 		rand = random.nextInt(Integer.MAX_VALUE) ; 
+	}
+	@Test
+	public void testNewsMap() throws Exception{
+		Map<Long,Map<String,Object>>  map = MyBatisSessionFactory.getSession().selectMap("cn.mldn.mapping.NewsNS.findMap", "nid") ; 
+		//System.err.println(map);
+		Iterator<Map.Entry<Long,Map<String,Object>>> iter = map.entrySet().iterator() ;
+		while(iter.hasNext()) {
+			Map.Entry<Long, Map<String,Object>> me = iter.next() ; 
+			System.out.println( "key=" + me.getKey() +  "、value = " + me.getValue());
+			Map<String,Object> ms = me.getValue() ; 
+			Iterator<Map.Entry<String, Object>> it = ms.entrySet().iterator() ; 
+			while(it.hasNext()) {
+				Map.Entry<String, Object> msme = it.next() ; 
+				System.out.println("\t|-" + "NewsKey=" + msme.getKey() + "、NewsValue=" + msme.getValue());
+			}
+		}
+	}
+	@Test
+	public void testNewsList() throws Exception{
+		List<News> newsList = MyBatisSessionFactory.getSession().selectList("cn.mldn.mapping.NewsNS.findAll") ; 
+		//System.out.println(newsList);
+		Iterator<News> iter = newsList.iterator() ; 
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
 	}
 	@Test
 	public void testNewsRemove() throws Exception{

@@ -16,7 +16,7 @@
 	</delete>
 	<!-- 现在给出的返回类型实际上就表示最终查询语句之中的行的转换类型，自动根据列名称转换 -->
 	<select id="findById" resultMap="NewsResultMap" parameterType="long">
-		SELECT nid,title,pub_date ,note FROM news WHERE nid=#{nid}  <!-- pubdate为设置的别名，与vo类型一致才可自动转换输出 -->
+		SELECT nid,title,pub_date ,note FROM news WHERE nid=#{nid}   
 	</select>
 	<resultMap type="News" id="NewsResultMap">
 		<id property="nid" column="nid"/> <!-- property表示类属性，column表示列名称 -->
@@ -24,4 +24,12 @@
 		<result property="pubdate" column="pub_date"/>
 		<result property="note" column="note"/>
 	</resultMap>
+	<!-- 查询全部之中的resultType描述的是集合里面的每一项具体的类型 -->
+	<select id="findAll" resultType="News">
+		SELECT nid,title,pub_date as pubdate,note FROM news  ; <!-- pubdate为设置的别名，与vo类型一致才可自动转换输出 -->
+	</select>
+	<!-- 查询结果以Map的形式，Map结合之中包含有key=主键、value=对象的Map集合 -->
+	<select id="findMap" resultType="Map">
+		SELECT nid,title,pub_date as pubdate,note FROM news  ; <!-- pubdate为设置的别名，与vo类型一致才可自动转换输出 -->
+	</select>
 </mapper>
