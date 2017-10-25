@@ -16,6 +16,26 @@ public class TestNewsCRUD {
 		rand = random.nextInt(Integer.MAX_VALUE) ; 
 	}
 	@Test
+	public void testNewsRemove() throws Exception{
+		long nid = 1 ; 
+		int len = MyBatisSessionFactory.getSession().delete("cn.mldn.mapping.NewsNS.doRemove",nid) ; 
+		MyBatisSessionFactory.getSession().commit();
+		TestCase.assertEquals(len, 1);
+	}
+	@Test
+	public void testNewsEdit() throws Exception{
+		News vo = new News () ; 
+		vo.setNid(2L);
+		vo.setTitle("修改后的标题 - " + rand);
+		vo.setPubdate(new Date());
+		vo.setNote("修改后的报告 - " + rand );
+		int len = MyBatisSessionFactory.getSession().update("cn.mldn.mapping.NewsNS.doEdit",vo) ;
+		TestCase.assertEquals(len, 1);
+		System.out.println(vo);
+		MyBatisSessionFactory.getSession().commit();
+		MyBatisSessionFactory.close();
+	}
+	@Test
 	public void testNewsAdd() throws Exception{
 		News vo = new News() ; 
 		vo.setTitle("标题 - " + rand);
@@ -27,4 +47,5 @@ public class TestNewsCRUD {
 		MyBatisSessionFactory.getSession().commit();
 		MyBatisSessionFactory.close();
 	}
+
 }

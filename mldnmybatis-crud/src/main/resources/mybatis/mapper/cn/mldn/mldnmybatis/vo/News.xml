@@ -8,4 +8,10 @@
 		INSERT INTO news(title,pub_date,note)
 		VALUES (#{title},#{pubdate},#{note})
 	</insert>
+	<update id="doEdit" parameterType="News">
+		UPDATE news SET title=#{title},pub_date=#{pubdate},note=#{note} WHERE nid=#{nid}
+	</update>
+	<delete id="doRemove" parameterType="java.lang.Long">
+		DELETE FROM news WHERE nid=#{nidParam}  <!-- 参数随便写，因为只有一个参数，会自动匹配 -->
+	</delete>
 </mapper>
