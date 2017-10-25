@@ -23,6 +23,13 @@ public class TestNewsCRUD {
 		TestCase.assertEquals(len, 1);
 	}
 	@Test
+	public void testFindById() throws Exception{
+		//查询数据并且直接以VO的类型返回
+		News vo = MyBatisSessionFactory.getSession().selectOne("cn.mldn.mapping.NewsNS.findById",7L) ; 
+		TestCase.assertNotNull(vo);
+		System.out.println(vo);
+	}
+	@Test
 	public void testNewsEdit() throws Exception{
 		News vo = new News () ; 
 		vo.setNid(2L);
