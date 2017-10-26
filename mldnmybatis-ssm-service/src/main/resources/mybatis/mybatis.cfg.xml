@@ -5,7 +5,7 @@
 <configuration>
 	<typeAliases>	<!-- 定义所有要使用类的别名 -->
 		<!-- 设置了包名称，则以后的别名就是各个VO的类名称 -->
-		<package name="cn.mldn.mldnmybatis.vo"/>
+		<package name="cn.mldn.mldnmybatis.ssm.vo"/>
 	</typeAliases>
 	<mappers>									<!-- 映射文件信息 -->
 		<mapper resource="mybatis/mapper/cn/mldn/mldnmybatis/vo/News.xml" />
