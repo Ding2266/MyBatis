@@ -170,3 +170,77 @@
 2017-10-25 23:47:22,900 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 6, 标题 - 1792646507, 2017-10-25 22:04:19.0, <<BLOB>>
 2017-10-25 23:47:22,901 TRACE [cn.mldn.mapping.NewsNS.findMap] - <==        Row: 7, 标题 - 450925995, 2017-10-25 22:04:59.0, <<BLOB>>
 2017-10-25 23:47:22,902 DEBUG [cn.mldn.mapping.NewsNS.findMap] - <==      Total: 4
+2017-10-26 00:24:43,363 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:24:43,408 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: 标题(String), 0(Long), 2(Integer)
+2017-10-26 00:24:43,432 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 0
+2017-10-26 00:25:40,512 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:25:40,551 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:25:40,579 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:25:40,586 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:25:40,592 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:25:40,592 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 2
+2017-10-26 00:27:46,537 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:27:46,577 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:27:46,605 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:27:46,612 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:27:46,617 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:27:46,617 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 2
+2017-10-26 00:27:46,618 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title = ? ; 
+2017-10-26 00:27:46,619 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:27:46,620 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:27:46,620 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 0
+2017-10-26 00:27:46,621 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
+2017-10-26 00:31:03,021 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE ? LIKE ? LIMIT ?,? ; 
+2017-10-26 00:31:03,065 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: title(String), %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:31:03,093 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 0
+2017-10-26 00:31:03,129 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title = ? ; 
+2017-10-26 00:31:03,129 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:31:03,130 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:31:03,130 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 0
+2017-10-26 00:31:03,132 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
+2017-10-26 00:31:49,366 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:31:49,414 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:31:49,444 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:31:49,453 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:31:49,469 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:31:49,469 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 2
+2017-10-26 00:31:49,471 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title = ? ; 
+2017-10-26 00:31:49,471 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:31:49,472 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:31:49,472 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 0
+2017-10-26 00:31:49,473 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
+2017-10-26 00:33:08,049 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:33:08,093 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:33:08,118 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:33:08,126 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:33:08,134 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:33:08,135 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 2
+2017-10-26 00:33:08,135 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title LIKE ? ; 
+2017-10-26 00:33:08,136 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:33:08,136 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:33:08,137 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 4
+2017-10-26 00:33:08,138 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
+2017-10-26 00:49:38,423 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:49:38,463 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 2(Integer)
+2017-10-26 00:49:38,499 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:49:38,506 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:49:38,514 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:49:38,515 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 2
+2017-10-26 00:49:38,516 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title LIKE ? ; 
+2017-10-26 00:49:38,517 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:49:38,518 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:49:38,518 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 4
+2017-10-26 00:49:38,519 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
+2017-10-26 00:50:04,928 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==>  Preparing: SELECT nid,title,pub_date,note FROM news WHERE title LIKE ? LIMIT ?,? ; 
+2017-10-26 00:50:04,979 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - ==> Parameters: %标题%(String), 0(Long), 5(Integer)
+2017-10-26 00:50:05,007 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==    Columns: nid, title, pub_date, note
+2017-10-26 00:50:05,015 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 4, 标题 - 2049920365, 2017-10-25 20:24:29.0, <<BLOB>>
+2017-10-26 00:50:05,020 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 5, 标题 - 943430014, 2017-10-25 20:28:01.0, <<BLOB>>
+2017-10-26 00:50:05,020 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 6, 标题 - 1792646507, 2017-10-25 22:04:19.0, <<BLOB>>
+2017-10-26 00:50:05,021 TRACE [cn.mldn.mapping.NewsNS.findSplit] - <==        Row: 7, 标题 - 450925995, 2017-10-25 22:04:59.0, <<BLOB>>
+2017-10-26 00:50:05,021 DEBUG [cn.mldn.mapping.NewsNS.findSplit] - <==      Total: 4
+2017-10-26 00:50:05,022 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==>  Preparing: SELECT COUNT(*) FROM news WHERE title LIKE ? ; 
+2017-10-26 00:50:05,022 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - ==> Parameters: %标题%(String)
+2017-10-26 00:50:05,023 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==    Columns: COUNT(*)
+2017-10-26 00:50:05,023 TRACE [cn.mldn.mapping.NewsNS.getSplitCount] - <==        Row: 4
+2017-10-26 00:50:05,024 DEBUG [cn.mldn.mapping.NewsNS.getSplitCount] - <==      Total: 1
