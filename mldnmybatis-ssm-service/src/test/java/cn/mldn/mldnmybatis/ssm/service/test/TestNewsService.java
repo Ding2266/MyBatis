@@ -27,6 +27,7 @@ public class TestNewsService {
 		vo.setNote("新闻内容");
 		vo.setPubdate(new Date());
 		TestCase.assertTrue(this.newsService.add(vo));
+		System.err.println(this.newsService.add(vo));
 	}
 	@Test
 	public void testListFindByIds() {
@@ -34,9 +35,11 @@ public class TestNewsService {
 		set.add(1L) ;
 		set.add(2L) ; 
 		TestCase.assertNotNull(this.newsService.listByIds(set));
+		System.err.println(this.newsService.listByIds(set));
 	}
 	@Test
 	public void testList() {
 		TestCase.assertNotNull(newsService.list(1L, 3, "note", "新闻"));
+		System.err.println(newsService.list(1L, 3, "note", "新闻"));
 	}
 }

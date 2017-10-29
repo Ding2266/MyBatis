@@ -1,9 +1,6 @@
 package cn.mldn.mldnmybatis.ssm.service.impl;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import javax.annotation.Resource;
@@ -19,7 +16,6 @@ import cn.mldn.mldnmybatis.ssm.vo.News;
 public class NewsServiceImpl extends AbstractService implements INewsService {
 	@Resource
 	private INewsDAO newsDAO ; 
-	
 	@Override
 	public boolean add(News vo) {
 		return this.newsDAO.doCreate(vo);
@@ -27,7 +23,10 @@ public class NewsServiceImpl extends AbstractService implements INewsService {
 
 	@Override
 	public List<News> listByIds(Set<Long> ids) {
-		return this.newsDAO.findByIds(ids);
+		if(ids == null || ids.size() == 0) {
+			return null ; 
+		}
+		return this.newsDAO.findByIds(ids.toArray());
 	}
 
 	@Override
