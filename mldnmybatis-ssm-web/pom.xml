@@ -12,6 +12,10 @@
   <name>mldnmybatis-ssm-web Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+		<dependency>
+			<groupId>cn.mldn</groupId>
+			<artifactId>mldnmybatis-ssm-service</artifactId>
+		</dependency>
     	<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
